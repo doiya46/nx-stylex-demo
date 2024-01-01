@@ -20,9 +20,11 @@ module.exports = composePlugins(
         dev: process.env.NODE_ENV === 'development',
         // Use statically generated CSS files and not runtime injected CSS.
         // Even in development.
-        runtimeInjection: process.env.NODE_ENV !== 'development',
+        runtimeInjection: true,
+        // runtimeInjection: process.env.NODE_ENV !== 'development',
         // optional. default: 'x'
         classNamePrefix: 'x',
+        useCSSLayers: true,
         // Required for CSS variable support
         unstable_moduleResolution: {
           // type: 'commonJS' | 'haste'
@@ -33,6 +35,7 @@ module.exports = composePlugins(
         },
       })
     );
+
     return config;
   }
 );

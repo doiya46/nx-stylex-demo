@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "npx nx run my-app-stylex:build --configuration=production --skip-nx-cache",
+    "build": "rm -fr ./dist && npx nx run my-app-stylex:build --configuration=production --skip-nx-cache",
     "serve:build": "yarn build && yarn serve ./dist/my-app-stylex",
     "test": "nx test"
   },
@@ -27,6 +27,7 @@
     "@nx/webpack": "17.2.8",
     "@nx/workspace": "17.2.8",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@stylexjs/babel-plugin": "^0.4.1",
     "@stylexjs/webpack-plugin": "^0.4.1",
     "@svgr/webpack": "^8.0.1",
     "@swc-node/register": "~1.6.7",

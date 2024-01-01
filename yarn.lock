@@ -1788,7 +1788,7 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-"@stylexjs/babel-plugin@0.4.1":
+"@stylexjs/babel-plugin@0.4.1", "@stylexjs/babel-plugin@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@stylexjs/babel-plugin/-/babel-plugin-0.4.1.tgz#4ec4f3851a93d3b1f686a92a502c1b439ec07d27"
   integrity sha512-usG7HFvq04ELD44BAukQlTzKwmw3B0isOgsYzO97iGTkHMi7CJN4hniag7Fj96hrTob8Kq6MBbbQkLeKzbjqIg==

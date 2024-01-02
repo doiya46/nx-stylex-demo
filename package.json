@@ -25,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@base2/pretty-print-object": "^1.0.2",
     "@nx/eslint": "17.2.8",
     "@nx/eslint-plugin": "17.2.8",
     "@nx/jest": "17.2.8",
@@ -70,11 +71,13 @@
     "prettier": "^2.6.2",
     "react-refresh": "^0.10.0",
     "serve": "^14.2.1",
-    "storybook-addon-designs": "^6.3.1",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.2.2",
     "url-loader": "^4.1.1"
+  },
+  "resolutions": {
+    "@base2/pretty-print-object": "^1.0.2"
   },
   "readme": "ERROR: No README data found!",
   "_id": "@my-app-stylex/source@0.0.0"

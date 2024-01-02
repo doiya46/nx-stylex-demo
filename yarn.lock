@@ -3728,6 +3728,13 @@
     lodash "^4.17.21"
     ts-dedent "^2.0.0"
 
+"@storybook/addon-designs@^7.0.7":
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-designs/-/addon-designs-7.0.7.tgz#64af26ce73e34bd36d4eba1438e83e8c44250967"
+  integrity sha512-4Ec85kgv/r55Zh5xOHSIq7b9h7PyYhavMpwLmjpzeOkEdFwiNM9KCTK8SE58yCXzbkrw1JIGb3+FAWfR5JfK5g==
+  dependencies:
+    "@figspec/react" "^1.0.0"
+
 "@storybook/addon-docs@7.6.7":
   version "7.6.7"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-7.6.7.tgz#47f111c4bcf0ea8f238d70219b2c65562f6810ee"

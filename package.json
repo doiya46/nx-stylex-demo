@@ -6,10 +6,11 @@
   "scripts": {
     "build": "rm -fr ./dist && npx nx run my-app-stylex:build --configuration=production --skip-nx-cache",
     "build-storybook": "yarn nx run my-app-stylex:build-storybook --configuration=ci",
+    "chromatic": "npx chromatic ",
     "serve:build": "yarn build && yarn serve ./dist/my-app-stylex",
     "start": "nx serve",
-    "test": "nx test",
-    "chromatic": "npx chromatic "
+    "storybook": "yarn nx run my-app-stylex:storybook",
+    "test": "nx test"
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.2.7",
@@ -33,6 +34,7 @@
     "@nx/webpack": "17.2.8",
     "@nx/workspace": "17.2.8",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@storybook/addon-designs": "^7.0.7",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/core-server": "^7.5.3",

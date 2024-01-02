@@ -15,5 +15,7 @@ type Story = StoryObj<typeof Button>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <Button variant="primary" />,
+  args: {
+    variant: 'primary',
+  },
 };

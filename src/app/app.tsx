@@ -26,13 +26,13 @@ export function App() {
       {
         ...stylex.props(
           isDark ? darkTheme : lightTheme,
-          overrideButton
-          // overrideTheme.colors(isDark, {
-          //   primary: {
-          //     default: 'blue',
-          //     [DARK]: 'red',
-          //   },
-          // })
+          overrideButton,
+          overrideTheme.colors(isDark, {
+            primary: {
+              default: 'blue',
+              [DARK]: 'red',
+            },
+          })
         )
         // ...{}
       }

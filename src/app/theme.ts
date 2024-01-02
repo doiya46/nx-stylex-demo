@@ -1,14 +1,17 @@
 import stylex from '@stylexjs/stylex';
-import { colors } from './tokens.stylex';
+import { tokens } from './tokens.stylex';
+import { buttonTokens } from './components/button-tokens.stylex';
 export const DARK = '@media (prefers-color-scheme: dark)';
 
-export const lightTheme = stylex.createTheme(colors, {
-  primary: {
-    default: '#386a1e',
-    [DARK]: '#9dd67c',
-  },
+export const lightTheme = stylex.createTheme(tokens, {
+  mdSysColorPrimary: '#386a1e',
 });
 
-export const darkTheme = stylex.createTheme(colors, {
-  primary: 'purple',
+export const darkTheme = stylex.createTheme(tokens, {
+  mdSysColorPrimary: '#13c2c2',
+});
+
+// Override
+export const overrideButton = stylex.createTheme(buttonTokens, {
+  borderRadius: '4px',
 });

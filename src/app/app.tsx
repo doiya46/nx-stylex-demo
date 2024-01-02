@@ -1,15 +1,14 @@
 import './app.css';
-import { colors } from './tokens.stylex';
 import stylex from '@stylexjs/stylex';
 import { useState } from 'react';
-import { darkTheme, lightTheme } from './theme';
+import { darkTheme, lightTheme, overrideButton } from './theme';
+import { tokens } from './tokens.stylex';
+import { Button } from './components';
 
 export const DARK = '@media (prefers-color-scheme: dark)';
 
-console.log(Object.keys(colors));
-
 const keys: { [key: string]: string } = {
-  primary: colors.primary.replace('var(--', '').replace(')', ''),
+  primary: tokens.mdSysColorPrimary.replace('var(--', '').replace(')', ''),
 };
 
 const overrideTheme = stylex.create({
@@ -27,60 +26,46 @@ export function App() {
       {
         ...stylex.props(
           isDark ? darkTheme : lightTheme,
-          overrideTheme.colors(isDark, {
-            primary: {
-              default: 'blue',
-              [DARK]: 'red',
-            },
-          })
+          overrideButton
+          // overrideTheme.colors(isDark, {
+          //   primary: {
+          //     default: 'blue',
+          //     [DARK]: 'red',
+          //   },
+          // })
         )
         // ...{}
       }
     >
-      <p {...stylex.props(styles.p)}>
-        Hello, theme is {isDark ? 'dark' : 'light'}
-      </p>
-      <button
-        {...stylex.props(styles.primaryButton)}
-        onClick={() => {
+      <p>Hello, theme is {isDark ? 'dark' : 'light'}</p>
+      <Button
+        color="primary"
+        variant="solid"
+        onPress={() => {
           setIsDark(true);
         }}
       >
         Dark
-      </button>
-      <button
-        {...stylex.props(styles.primaryButton)}
-        onClick={() => {
+      </Button>
+      <Button
+        variant="ghost"
+        color="primary"
+        onPress={() => {
           setIsDark(false);
         }}
       >
         Light
-      </button>
-      <button
-        {...stylex.props(styles.customButton('red'))}
-        onClick={() => {
+      </Button>
+      <Button
+        onPress={() => {
           setIsDark(false);
         }}
       >
         Custom button
-      </button>
+      </Button>
+      <Button isDisabled>Disabled</Button>
     </div>
   );
 }
-
-const styles = stylex.create({
-  primaryButton: {
-    backgroundColor: colors.primary,
-    color: 'white',
-  },
-  customButton: (color) => ({
-    backgroundColor: color,
-    color: 'white',
-  }),
-  p: {
-    backgroundColor: colors.primary,
-    color: 'white',
-  },
-});
 
 export default App;

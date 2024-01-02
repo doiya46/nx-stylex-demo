@@ -8,7 +8,8 @@
     "build-storybook": "yarn nx run my-app-stylex:build-storybook --configuration=ci",
     "serve:build": "yarn build && yarn serve ./dist/my-app-stylex",
     "start": "nx serve",
-    "test": "nx test"
+    "test": "nx test",
+    "chromatic": "npx chromatic "
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.2.7",
@@ -71,5 +72,7 @@
     "ts-node": "10.9.1",
     "typescript": "~5.2.2",
     "url-loader": "^4.1.1"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@my-app-stylex/source@0.0.0"
 }

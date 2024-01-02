@@ -54,6 +54,7 @@
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.1",
     "babel-jest": "^29.4.1",
+    "chromatic": "^10.2.0",
     "eslint": "~8.48.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "2.27.5",

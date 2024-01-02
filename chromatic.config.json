@@ -1,0 +1,6 @@
+{
+    "projectId": "6593c73627315ed5b1d8b274",
+    "junitReport": false,
+    "onlyChanged": true,
+    "outputDir": "./dist/storybook/my-app-stylex"
+}

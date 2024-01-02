@@ -1,20 +1,45 @@
+import './app.css';
 import { colors } from './tokens.stylex';
 import stylex from '@stylexjs/stylex';
-import './app.css';
 import { useState } from 'react';
 import { darkTheme, lightTheme } from './theme';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+export const DARK = '@media (prefers-color-scheme: dark)';
+
+console.log(Object.keys(colors));
+
+const keys: { [key: string]: string } = {
+  primary: colors.primary.replace('var(--', '').replace(')', ''),
+};
+
+const overrideTheme = stylex.create({
+  colors: (isDark, dynamicColors) => ({
+    [keys.primary]: dynamicColors.primary[isDark ? DARK : 'default'],
+  }),
+});
+
 export function App() {
-  const [isDark, setIsDark] = useState(false);
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [isDark, setIsDark] = useState(systemDark);
 
   return (
     <div
       {
-        ...stylex.props(isDark ? darkTheme : lightTheme)
+        ...stylex.props(
+          isDark ? darkTheme : lightTheme,
+          overrideTheme.colors(isDark, {
+            primary: {
+              default: 'blue',
+              [DARK]: 'red',
+            },
+          })
+        )
         // ...{}
       }
     >
-      <p {...stylex.props(styles.p)}>Hello</p>
+      <p {...stylex.props(styles.p)}>
+        Hello, theme is {isDark ? 'dark' : 'light'}
+      </p>
       <button
         {...stylex.props(styles.primaryButton)}
         onClick={() => {

@@ -1,14 +1,15 @@
 {
   "name": "@my-app-stylex/source",
   "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
     "build": "rm -fr ./dist && npx nx run my-app-stylex:build --configuration=production --skip-nx-cache",
+    "build-storybook": "yarn nx run my-app-stylex:build-storybook --configuration=ci",
     "serve:build": "yarn build && yarn serve ./dist/my-app-stylex",
+    "start": "nx serve",
     "test": "nx test"
   },
-  "private": true,
   "dependencies": {
     "@material/material-color-utilities": "^0.2.7",
     "@stylexjs/stylex": "^0.4.1",
